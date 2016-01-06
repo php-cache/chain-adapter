@@ -14,10 +14,10 @@ namespace Cache\Adapter\Chain\Tests;
 use Cache\Adapter\Chain\CachePoolChain;
 use Cache\Adapter\PHPArray\ArrayCachePool;
 use Cache\Adapter\Predis\PredisCachePool;
-use Cache\IntegrationTests\CachePoolTest as BaseTest;
+use Cache\IntegrationTests\CachePoolTest;
 use Predis\Client;
 
-class IntegrationPoolTest extends BaseTest
+class IntegrationPoolTest extends CachePoolTest
 {
     private $adapters;
 
