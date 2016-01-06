@@ -56,7 +56,7 @@ class CachePoolChain implements CacheItemPoolInterface, TaggablePoolInterface
     {
         $hits = [];
         foreach ($this->pools as $pool) {
-            $items = $pool->getItem($keys, $tags);
+            $items = $pool->getItems($keys, $tags);
             /** @var CacheItemInterface $item */
             foreach ($items as $item) {
                 if ($item->isHit()) {
@@ -108,7 +108,7 @@ class CachePoolChain implements CacheItemPoolInterface, TaggablePoolInterface
     {
         $result = true;
         foreach ($this->pools as $pool) {
-            $result = $result && $pool->deleteItem($keys, $tags);
+            $result = $result && $pool->deleteItems($keys, $tags);
         }
 
         return $result;
