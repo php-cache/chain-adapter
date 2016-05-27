@@ -245,7 +245,7 @@ class CachePoolChain implements CacheItemPoolInterface, TaggablePoolInterface, L
         $result = true;
         foreach ($this->getPools() as $poolKey => $pool) {
             try {
-                $result = $result && $pool->save($item);
+                $result = $pool->save($item) && $result;
             } catch (CachePoolException $e) {
                 $this->handleException($poolKey, __FUNCTION__, $e);
             }
